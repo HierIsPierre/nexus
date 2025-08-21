@@ -5,8 +5,8 @@ import (
 	"fmt"
 	"os"
 
-	"example.com/docker"
-	"github.com/HierIsPierre/opsportal"
+	"github.com/HierIsPierre/nexus/docker"
+	"github.com/HierIsPierre/nexus/opsportal"
 )
 
 type stringSlice []string
@@ -54,8 +54,13 @@ func main() {
 
 		for _, service := range services {
 			fmt.Printf("Deploying service: %s (name: %s)\n", service, imageName)
-			docker.Build(service, imageName)
+			//docker.Build(service, imageName)
 		}
+
+		opsportal.DeploySandbox(
+			subscriptionName,
+			services,
+		)
 
 	default:
 		fmt.Println("Unknown command:", os.Args[1])

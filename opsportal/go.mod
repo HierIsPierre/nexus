@@ -1,4 +1,4 @@
-module github.com/HierIsPierre/opsportal
+module github.com/HierIsPierre/nexus/opsportal
 
 go 1.24.6
 

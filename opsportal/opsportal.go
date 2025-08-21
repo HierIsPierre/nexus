@@ -3,7 +3,7 @@ package opsportal
 import (
 	"fmt"
 
-	pb "github.com/HierIsPierre/opsportal/protos"
+	pb "github.com/HierIsPierre/nexus/opsportal/protos"
 )
 
 func DeploySandbox(subscription string, services []string) error {
