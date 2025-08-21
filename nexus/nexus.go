@@ -36,15 +36,14 @@ func main() {
 		deployCmd.StringVar(&imageName, "imagename", "", "Name of the image")
 		deployCmd.StringVar(&subscriptionName, "subscription", "", "Name of the subscription to which to deploy")
 		deployCmd.Var(&services, "service", "Service to deploy (can be repeated)")
- 		 
+
 		// Parse flags after "deploy"
 		deployCmd.Parse(os.Args[2:])
 
-		if len(services) == 0 {
-			fmt.Println("Error: -service flag is required")
-			deployCmd.Usage()
-			return
-		}
+		// if len(services) == 0 {
+		// 	fmt.Println("Error: -service flag is required")
+		// 	deployCmd.Usage()
+		// }
 
 		if len(subscriptionName) == 0 {
 			fmt.Println("Error: -subscription flag is required")
@@ -54,13 +53,20 @@ func main() {
 
 		for _, service := range services {
 			fmt.Printf("Deploying service: %s (name: %s)\n", service, imageName)
-			//docker.Build(service, imageName)
+			docker.Build(service, imageName)
 		}
 
-		opsportal.DeploySandbox(
+		sandboxImage := imageName + "-sandbox"
+
+		err := opsportal.DeploySandbox(
 			subscriptionName,
 			services,
+			sandboxImage,
 		)
+
+		if err != nil {
+			fmt.Printf("%s\n\n", err)
+		}
 
 	default:
 		fmt.Println("Unknown command:", os.Args[1])

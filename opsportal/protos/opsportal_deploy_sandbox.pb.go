@@ -172,8 +172,8 @@ const file_protos_opsportal_deploy_sandbox_proto_rawDesc = "" +
 	"\x0eServiceDetails\x12!\n" +
 	"\fservice_name\x18\x01 \x01(\tR\vserviceName\x12\x14\n" +
 	"\x05image\x18\x02 \x01(\tR\x05image\"\x17\n" +
-	"\x15DeploySandboxResponse2\x8c\x01\n" +
-	"\x14DeploySandboxService\x12t\n" +
+	"\x15DeploySandboxResponse2\x85\x01\n" +
+	"\rDeploySandbox\x12t\n" +
 	"\rDeploySandbox\x120.opsportal.deploysandbox.v1.DeploySandboxRequest\x1a1.opsportal.deploysandbox.v1.DeploySandboxResponseB\x10Z\x0e/protos;protosb\x06proto3"
 
 var (
@@ -196,8 +196,8 @@ var file_protos_opsportal_deploy_sandbox_proto_goTypes = []any{
 }
 var file_protos_opsportal_deploy_sandbox_proto_depIdxs = []int32{
 	1, // 0: opsportal.deploysandbox.v1.DeploySandboxRequest.service_details:type_name -> opsportal.deploysandbox.v1.ServiceDetails
-	0, // 1: opsportal.deploysandbox.v1.DeploySandboxService.DeploySandbox:input_type -> opsportal.deploysandbox.v1.DeploySandboxRequest
-	2, // 2: opsportal.deploysandbox.v1.DeploySandboxService.DeploySandbox:output_type -> opsportal.deploysandbox.v1.DeploySandboxResponse
+	0, // 1: opsportal.deploysandbox.v1.DeploySandbox.DeploySandbox:input_type -> opsportal.deploysandbox.v1.DeploySandboxRequest
+	2, // 2: opsportal.deploysandbox.v1.DeploySandbox.DeploySandbox:output_type -> opsportal.deploysandbox.v1.DeploySandboxResponse
 	2, // [2:3] is the sub-list for method output_type
 	1, // [1:2] is the sub-list for method input_type
 	1, // [1:1] is the sub-list for extension type_name

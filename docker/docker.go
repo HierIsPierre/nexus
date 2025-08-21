@@ -20,7 +20,6 @@ func Build(service string, name string) {
 	err := cmd.Run()
 	if err != nil {
 		fmt.Printf("Error building image: %v\n", err)
-		return
 	}
 
 	Push(imageTag)
